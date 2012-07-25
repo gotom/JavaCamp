@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mah? (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+           John Arthorne (Eclipse template)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+<head>
+<title>Presentation</title>
+
+<meta charset='utf-8'>
+<script src='slides.js'></script>
+<style>
+/* Your individual styles here, or just use inline styles if that's
+		       what you want. */
+</style>
+
+</head>
+
+
+<body style='display: none;'>
+
+	<section class='slides layout-regular template-eclipse'>
+
+		<!-- Your slides (<article>s) go here. Delete or comment out the 
+           slides below. -->
+
+
+		<article class='biglogo'></article>
+
+		<article>
+			<h1>
+				Developing for Web, In Web <br> Eclipse Orion
+			</h1>
+			<p>
+				Szymon Brandys, Małgorzata Janczarska, Tomasz Żarna <br> July, 2012
+			</p>
+		</article>
+
+		<!-- Orion introduction -->
+		
+		<article>
+			<h2>Let me introduce Orion</h2>
+		</article>
+
+		<article>
+			<h3>What is Orion</h3>
+			<ul>
+				<li>Build developer tooling that works in a browser,</li>
+				<li>at web scale,</li>
+				<li>integrating well with existing tools that exist on the web,</li>
+				<li>based on well ‐ proven web architectures - REST, HTTP, JSON, OpenID, and others.</li>
+			</ul>
+		</article>
+		
+		<article>
+			<h3>Why Not an IDE in a Browser?</h3>
+			<img src='images/Cloud9.png'  style="width: 700px; margin-top: 20px;">
+		</article>
+		
+		<article>
+			<h3>Context: Already in a Browser</h3>
+			<ul>
+				<li>Bug tracking (Bugzilla, JIRA, Trac, Lighthouse, Rational RTC)</li>
+				<li>Builds (Hudson/Jenkins)</li>
+				<li>Code review (Bugzilla, Gerrit, GitHub)</li>
+				<li>Documentation, code snippets (pastebin, Gist)</li>
+				<li>Browsing code repositories (GitHub, ViewCVS, Rational RTC)</li>
+				<li>Debugger (Firebug, WebKit Inspector, Developer Tools)</li>
+			</ul>
+		</article>
+		
+		<article>
+			<h3>What’s Missing? Not Much</h3>
+			<ul>
+				<li>Code editor</li>
+				<li>Navigator</li>
+				<li>Work with SCM (commit, compare, merge, etc)</li>
+				<li>Indexing - full text search</li>
+				<li>Unit tests</li>
+				<br>
+				<li>Initial focus on web developers working on client-side JavaScript, HTML, CSS</li>
+			</ul>
+		</article>
+
+		<article>
+			<h3>Orion Assumptions</h3>
+			<ul>
+				<li>Software development in a browser</li>
+				<ul>
+					<li>editing</li>
+					<li>navigating folders</li>
+					<li>searching</li>
+					<li>working with SCM</li>
+				</ul>
+				<li>Set of linked web pages, <u>NOT an IDE running in a browser</u></li>
+				<ul>
+					<li>easy to integrate other functionality even if hosted on different servers</li>
+				</ul>
+			</ul>
+		</article>
+		
+		<article>
+			<h3>Orion Design Principles</h3>
+			<ul>
+				<li>Regular hyperlinks, back button, bookmarking, link sharing</li>
+				<li>Functionality on separate pages.</li>
+				<p style="font-weight: bold; margin: 30px; text-decoration: underline;">Page = Task + Resource</p>
+				<li>Performant and Lightweight. Speed trumps power.</li>
+				<li>Components should have value on their own.</li>
+				<li>Adopters....</li>
+			</ul>
+		</article>
+
+
+		<article>
+			<h3>Orion development cycle</h3>
+			<ul>
+				<li>went open source January 2011</li>
+				<li>0.2 June 2011</li>
+				<li>0.3 October 2011</li>
+				<li>0.4 February 2012</li>
+				<li>0.5 June 2012</li>
+				<li>1.0 October 2012</li>
+			</ul>
+		</article>
+
+		<article class='fill'>
+			<h3>Getting Started</h3>
+			<p>
+				<img src='images/Orionhub-signup.png'>
+			</p>
+			<div class='source white'>Source: eclipse.org</div>
+		</article>
+		
+<!-- See Orion at Work -->
+		
+		<article>
+			<h2>Orion at work</h2>
+		</article>
+
+<!-- Demo -->
+
+		<article>
+			<h3>Navigator</h3>
+			<ul>
+				<li>"Plugable" filesystem</li>
+				<ul>
+					<li>Server local</li>
+					<li>WebDav</li>
+					<li>HTML5 local filesystem</li>
+					<li>Amazon S3 filesystem</li>
+				</ul>
+				<li>"Plugable" actions</li>
+				<li>Inport/export files</li>
+				<ul>
+					<li>Single file</li>
+					<li>Zip file</li>
+					<li>SFTP transfer</li>
+				</ul>
+			</ul>
+		</article>
+
+		<article>
+			<h3>Editor</h3>
+			<ul>
+				<li>HTML syntax validation + highlighting*</li>
+				<li>Content assist for JavaScript** and HTML, CSS***</li>
+				<li>Folding</li>
+				<li>Hyperlinks</li>
+				<li>Firefox 10 uses the editor in the ScratchPad</li>
+				<li>"Plugable" syntax</li>
+				<li>"Plugable" key bindings</li>
+			</ul>
+			<div class='source'>* CodeMirror&nbsp;&nbsp;** Esprima&nbsp;&nbsp;*** CSS Lint</div>
+		</article>
+		
+		<article>
+			<h3>Git support</h3>
+			 <ul>
+				<li>init, push, pull, clone, log, reset, rebase, cherry-pick...</li>
+				<li>Repositories view</li>
+				<li>Status view</li>
+				<li>Commit details</li>
+				<li>Apply/create patch</li>
+				<li>Pull request</li>
+			</ul>
+		</article>
+		
+		<article>
+			<h3>Sites</h3>
+			 <ul>
+				<li>Demo your code</li>
+				<li>"Selfhosting"</li>
+				<li>Run this presentation</li>
+			</ul>
+			<h3>Console</h3>
+			 <ul>
+				<li>Exploring filesystem</li>
+				<li>Content assist</li>
+				<li>"Plugable" commands</li>
+			</ul>
+		</article>
+		
+		<article>
+			<p>
+				<img class='centered' style='height: 400px;' src='images/rookie_award.png'>
+			</p>
+			<div class='source'>Source: Black Duck Software</div>
+		</article>
+		
+<!-- Sample extensions -->
+		
+		<article>
+			<h2>Orion extensions</h2>
+		</article>
+		
+		<article class="smaller">
+			<h3>Orion extensions and plugins</h3>
+			<ul>
+				<li>Orion provides a service registry similar to the OSGi service model</li>
+				<li>Orion implements the Eclipse concept of extensions and extension points using the Orion service registry</li>
+				<li>Services and extensions that reside on different web domains from the host Orion server are contributed to Orion by registering plugins. 
+				A plugin is declared via an HTML file, is opened in a "head-less" child IFrame and uses window.postMessage
+				to advertise capabilities in the form of services and extensions back to Orion</li>
+			</ul>
+			<div class='source'>Orion wiki</div>
+		</article>
+
+		<article>
+			<h3>orion.edit.command</h3>
+			<ul>
+				<li>Registers a command that operates on the contents or
+					selection in an editor</li>
+				<li>Declares a single function: run(selectedText, text,
+					selection)</li>
+			</ul>
+			<pre>
+provider.registerServiceProvider("orion.edit.command", {
+   run : function(text) {
+     return text.toUpperCase();
+   }
+ }, {
+   name : "UPPERCASE",
+   img : "/images/gear.gif",
+   key : [ "u", true ]
+});
+			</pre>
+		</article>
+
+		<article>
+			<h3>
+	          Other extensions
+	        </h3>
+	        <ul>
+	          <li>orion.edit.highlighter - contributes syntax highlighting rules to the editor</li>
+	          <li>orion.edit.contentAssist - contributes content assist proposals</li>
+	          <li>orion.edit.outliner - contributes outline for a document</li>
+	          <li>orion.edit.validator - calculates errors and warnings in a document</li>
+	        </ul>
+		</article>
+		
+<!-- About Markdown -->
+		
+		<article>
+			<h2>Markdown example</h2>
+		</article>
+
+		<article class="smaller">
+	        <h3>
+	          Markdown in a Nutshell
+	        </h3>
+	        <ul>
+	        	<li>Markdown is intended to be as easy-to-read and easy-to-write as possible.</li>
+	        	<li>A Markdown-formatted document should be publishable as-is, as plain text,
+	        	and can be read without looking like it's been marked up with tags or formatting instructions.</li>
+	        	<li>Markdown uses punctuation characters, carefully chosen so as to look like what they mean.      
+	        	e.g., asterisks around a word actually look like *emphasis*, markdown lists look like lists, etc.</li>
+				<li>Markdown can be easily converted to structurally valid XHTML (or HTML).</li>
+	        	<li>The single biggest source of inspiration for Markdown's syntax is the format of plain text email.</li>
+	        </ul>
+      	</article>
+      
+		<article class="smaller">
+	        <h3>
+	          Markdown Syntax Highlights
+	        </h3>
+	        	<h4>Block Elements (Paragraphs, Headers, Blockquotes, Lists, etc.)</h4>
+        		<ul>
+        			<li><code># This is an equivalent of H1</code></li>
+        			<li><code>## This is an equivalent of H2</code></li>
+        			<li><code>&gt; Blockquote</code></li>
+        			<li><code>* Unordered list item</code></li>
+        		</ul>
+	        	
+	        	<h4>Span Elements (Links, Emphasis, Code)</h4>
+        		<ul>
+        			<li><code>**text in bold**</code></li>
+        			<li><code>inline [link](http://example.com) in text</code></li>
+        			<li><code>`console.info()` for inline code</code></li>
+        		</ul>
+		</article>
+      
+		<article class="smaller">
+			<h3>
+				Sample Markdown Document
+			</h3>
+			<pre>
+
+Title
+=====
+        
+## Header 1
+This is a sample text. **Bold** text.
+
+### Header 1.1
+Sample list below:
+
+* item 1
+* item 2
+* item 3
+
+## Header 2
+Text with a [link]
+
+[link] http://sample.com "Sample link" 
+			</pre>
+			It is easy to read as-is.
+		</article>
+	      
+		<article class="smaller">
+			<h3>
+				... Converted to HTML
+	        </h3>
+			<pre>
+
+&lt;h1&gt;Title&lt;/h1&gt;
+
+&lt;h2&gt;Header 1&lt;/h1&gt;
+
+&lt;p&gt;This is a sample text. &lt;strong&gt;Bold&lt;/strong&gt; text.&lt;/p&gt;
+
+&lt;h3&gt;Header 1.1&lt;/h2&gt;
+
+&lt;p&gt;Sample list below:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;item 1&lt;/li&gt;
+&lt;li&gt;item 2&lt;/li&gt;
+&lt;li&gt;item 3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Header 2&lt;/h1&gt;
+
+&lt;p&gt;Text with a &lt;a href="http://sample.com" title="Sample link"&gt;link&lt;/a&gt;&lt;/p&gt;
+			</pre>
+		</article>
+	      
+		<article = "smaller">
+			<h3>Title</h3>
+	
+			<h4>Header 1</h4>
+			
+			<p>This is a sample text. <strong>Bold</strong> text.</p>
+			
+			<h5>Header 1.1</h5>
+			
+			<p>Sample list below:</p>
+			
+			<ul>
+			<li>item 1</li>
+			<li>item 2</li>
+			<li>item 3</li>
+			</ul>
+			
+			...
+		</article>
+		
+<!-- See Orion at Work again -->
+		
+		<article>
+			<h2>Orion at work (Markdown Sample)</h2>
+		</article>
+
+		<!-- Thank You -->
+		
+		<article>
+			<h3>Thank you!</h3>
+			<ul>
+				<li><a href='http://www.eclipse.org/orion'>www.eclipse.org/orion</a>
+				</li>
+				<li><a href='http://planetorion.org'>planetorion.org</a>
+				</li>
+				<li><a href='http://orionhub.org'>orionhub.org</a>
+				</li>
+				<li><a href='http://wiki.eclipse.org/Orion'>wiki.eclipse.org/Orion</a>
+				</li>
+			</ul>
+		</article>
+      
+	</section>
+
+</body>
+</html>
