@@ -104,7 +104,7 @@ body {
 } 
 
 .slides.template-eclipse > article:not(.nobackground):not(.biglogo) {
-  background: url(images/33rd_logo.png) 630px 610px no-repeat;  
+  background: url(images/33rd_logo.png) 600px 610px no-repeat;  
   
   background-color: white;  
 } 
