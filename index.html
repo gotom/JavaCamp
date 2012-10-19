@@ -47,10 +47,6 @@
 		</article>
 
 		<!-- Orion introduction -->
-		
-		<article>
-			<h2>Let me introduce Orion</h2>
-		</article>
 
 		<article>
 			<h3>What is Orion</h3>
@@ -65,12 +61,6 @@
 			</ul>
 		</article>
 
-			
-		<article>
-			<h3>Why Not an IDE in a Browser?</h3>
-			<img src='images/Cloud9.png'  style="width: 700px; margin-top: 20px;">
-		</article>
-		
 		<article>
 			<h3>Context: Already in a Browser</h3>
 			<ul>
@@ -95,46 +85,24 @@
 				<li>Initial focus on web developers working on client-side JavaScript, HTML, CSS</li>
 			</ul>
 		</article>
-
-		<article>
-			<h3>Orion Assumptions</h3>
-			<ul>
-				<li>Software development in a browser</li>
-				<ul>
-					<li>editing</li>
-					<li>navigating folders</li>
-					<li>searching</li>
-					<li>working with SCM</li>
-				</ul>
-				<li>Set of linked web pages, <u>NOT an IDE running in a browser</u></li>
-				<ul>
-					<li>easy to integrate other functionality even if hosted on different servers</li>
-				</ul>
-			</ul>
-		</article>
 		
 		<article>
 			<h3>Orion Design Principles</h3>
 			<ul>
-				<li>Regular hyperlinks, back button, bookmarking, link sharing</li>
-				<li>Functionality on separate pages.</li>
-				<p style="font-weight: bold; margin: 30px; text-decoration: underline;">Page = Task + Resource</p>
+				<li>Use native browser capabilities</li>
+				<li>Task oriented / resource-focused</li>
 				<li>Performant and Lightweight. Speed trumps power.</li>
-				<li>Components should have value on their own.</li>
-				<li>Adopters....</li>
+				<li>Low barriers to entry for consumers</li>
 			</ul>
 		</article>
-
-
+		
 		<article>
 			<h3>Orion development cycle</h3>
 			<ul>
 				<li>went open source January 2011</li>
-				<li>0.2 June 2011</li>
-				<li>0.3 October 2011</li>
-				<li>0.4 February 2012</li>
 				<li>0.5 June 2012</li>
 				<li>1.0 October 2012</li>
+				<li>2.0 before EclipseCon 2013?</li>
 			</ul>
 		</article>
 
@@ -146,12 +114,6 @@
 			<div class='source white'>Source: eclipse.org</div>
 		</article>
 		
-<!-- See Orion at Work -->
-		
-		<article>
-			<h2>Orion at work</h2>
-		</article>
-
 <!-- Demo -->
 
 		<article>
@@ -228,18 +190,34 @@
 			<h2>Orion extensions</h2>
 		</article>
 		
-		<article class="smaller">
+		<article>
 			<h3>Orion extensions and plugins</h3>
 			<ul>
 				<li>Orion provides a service registry similar to the OSGi service model</li>
 				<li>Orion implements the Eclipse concept of extensions and extension points using the Orion service registry</li>
-				<li>Services and extensions that reside on different web domains from the host Orion server are contributed to Orion by registering plugins. 
-				A plugin is declared via an HTML file, is opened in a "head-less" child IFrame and uses window.postMessage
-				to advertise capabilities in the form of services and extensions back to Orion</li>
+				<li>Services and extensions that reside on different web domains from the host Orion server are contributed to Orion by registering plugins</li>
 			</ul>
 			<div class='source'>Orion wiki</div>
 		</article>
-
+		
+		<article class="smaller">
+			<h3>Integration with Orion Plugins</h3>
+			<ul>
+				<li>Orion plugins are separate HTML pages hosted in non-visible IFrames</li>
+				<li>Advertises “cacheable” capabilities/properties using window.postMessage</li>
+				<li>Allows cross-origin communication and independent implementation</li>
+				<li>Message payload is JSON-like (Structured Clone Algorithm)</li>
+			</ul>
+			<ul>
+				<li><strong>Application Linking (URI Templates / Hyperlinks)</strong><br>
+				Link from Navigator to Editor without hard-coding</li>
+				<li><strong>Metadata (Name / Value pairs)</strong><br>
+				Action Labels, Cache information, Filters</li>
+				<li><strong>Service Provider (JSON-RPC variant / binary support)</strong><br>
+				File Content, Editor Outline, Editor Actions</li>
+ 			<ul>
+ 		</article>
+		
 		<article>
 			<h3>orion.edit.command</h3>
 			<ul>
